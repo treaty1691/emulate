@@ -1,0 +1,14 @@
+#!/bin/bash
+CMD="$(basename "$0")"
+ARGS="$*"
+KEY="${CMD} ${ARGS}"
+SAFE_KEY=$(echo "$KEY" | sed 's/[^A-Za-z0-9._-]/_/g')
+FILE="/opt/mock/aix/data/${SAFE_KEY}.txt"
+
+if [[ -f "$FILE" ]]; then
+    cat "$FILE"
+    exit 0
+fi
+
+echo "AIX-EMULATOR: command not implemented: $CMD $ARGS" >&2
+exit 127

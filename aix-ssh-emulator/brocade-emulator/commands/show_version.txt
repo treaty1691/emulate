@@ -1,0 +1,3 @@
+Fabric OS v8.2.0
+Switch: Brocade 6510
+Base MAC Address: 00:25:90:AA:BB:CC

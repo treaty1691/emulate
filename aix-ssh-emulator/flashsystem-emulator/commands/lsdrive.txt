@@ -1,0 +1,2 @@
+UID  Model  Size  Status
+12345  FlashSystem 512GB  online

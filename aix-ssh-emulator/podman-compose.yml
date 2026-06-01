@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  aix1:
+    build: ./aix-emulator
+    container_name: aix1
+    ports:
+      - "2221:22"
+
+  brocade1:
+    build: ./brocade-emulator
+    container_name: brocade1
+    ports:
+      - "2223:2223"
+
+  flash1:
+    build: ./flashsystem-emulator
+    container_name: flash1
+    ports:
+      - "2224:2224"

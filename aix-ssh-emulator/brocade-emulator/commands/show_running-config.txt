@@ -1,0 +1,4 @@
+# Sample Brocade running-config
+hostname BrocadeSwitch
+interface ethernet 1/1
+ fabric-name FC-SW1

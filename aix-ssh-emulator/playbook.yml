@@ -1,0 +1,33 @@
+- hosts: aix
+  gather_facts: false
+  tasks:
+    - name: Check AIX oslevel
+      command: oslevel -s
+      register: aix_oslevel
+
+    - name: Print AIX oslevel
+      debug:
+        var: aix_oslevel.stdout
+
+- hosts: brocade
+  gather_facts: false
+  tasks:
+    - name: Show Brocade version
+      ansible.netcommon.cli_command:
+        command: show version
+      register: brocade_version
+
+    - name: Print Brocade version
+      debug:
+        var: brocade_version.stdout
+
+- hosts: flashsystem
+  gather_facts: false
+  tasks:
+    - name: List FlashSystem drives
+      command: lsdrive
+      register: flash_drives
+
+    - name: Print FlashSystem drive list
+      debug:
+        var: flash_drives.stdout

@@ -1,0 +1,6 @@
+#
+#  Fileset  Level  State  Type  Description
+#
+bos.rte  7.2.5.0  COMMITTED  FCA  Base Operating System
+rsct.rte  7.2.5.0  COMMITTED  FCA  Reliable Scalable Cluster Technology
+perl.base  5.20.1.0  COMMITTED  FCA  Perl Interpreter

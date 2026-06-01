@@ -1,0 +1,2 @@
+Filesystem  kbytes  free  %used  mounted on
+/dev/hd4   10240   5120  50%  /

@@ -1,0 +1,2 @@
+ent0 00-00  Virtual Ethernet Adapter  Available  Enabled
+hdisk0 01-00  IBM 2107  Not Available  Defined

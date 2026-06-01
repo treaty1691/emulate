@@ -1,0 +1,6 @@
+Port 22
+Protocol 2
+PermitRootLogin no
+PasswordAuthentication yes
+AllowUsers aix
+Subsystem sftp /usr/libexec/openssh/sftp-server
