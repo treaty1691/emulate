@@ -39,3 +39,8 @@ This lab is designed to run on RHEL-based hosts using Podman/Podman Compose or D
 - `tools/test_aix_df_k.sh` — regression test for AIX `df -k`
 - `tools/rebuild_aix_emulator.sh` — stop/remove the AIX container, delete its image, and rebuild the emulator image
 - `tools/restart_all_containers.sh` — stop and restart all running emulator containers
+
+## Cleanup helper
+
+- 
+- 	ools/cleanup_all_emulators.sh — stop and remove emulator containers and their images
