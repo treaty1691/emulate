@@ -8,12 +8,21 @@
   tasks:
     - name: Find canned output files on controller
       set_fact:
-        cmd_files: "{{ lookup('fileglob', data_dir + '/*.txt', wantlist=True) }}"
+        cmd_files: "{{ lookup('fileglob', data_dir + '/*.txt', wantlist=True) | default([]) }}"
+
+    - name: Initialize command list
+      set_fact:
+        aix_commands: []
 
     - name: Build command list from filenames
       set_fact:
-        aix_commands: "{{ aix_commands | default([]) + [ ((item | basename).split('.txt')[0] | replace('_', ' ')) ] }}"
+        aix_commands: "{{ aix_commands + [ ((item | basename).split('.txt')[0] | replace('_', ' ')) ] }}"
       loop: "{{ cmd_files }}"
+
+    - name: No canned outputs found — skip
+      debug:
+        msg: "No canned output files found in {{ data_dir }} — nothing to run"
+      when: aix_commands | length == 0
 
     - name: Run each AIX command from canned outputs
       command: "{{ item }}"
@@ -21,6 +30,7 @@
       failed_when: false
       changed_when: false
       loop: "{{ aix_commands }}"
+      when: aix_commands | length > 0
 
     - name: Show command results
       debug:
@@ -32,3 +42,4 @@
           Stderr: |
             {{ item.stderr }}
       loop: "{{ cmd_result.results }}"
+      when: aix_commands | length > 0
