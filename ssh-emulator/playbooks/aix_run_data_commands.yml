@@ -1,0 +1,34 @@
+- hosts: aix
+  gather_facts: false
+  vars:
+    ansible_user: aix
+    ansible_password: aix
+    # data directory containing canned outputs (relative to repo root)
+    data_dir: "ssh-emulator/aix-emulator/data"
+  tasks:
+    - name: Find canned output files on controller
+      set_fact:
+        cmd_files: "{{ lookup('fileglob', data_dir + '/*.txt', wantlist=True) }}"
+
+    - name: Build command list from filenames
+      set_fact:
+        aix_commands: "{{ aix_commands | default([]) + [ ((item | basename).split('.txt')[0] | replace('_', ' ')) ] }}"
+      loop: "{{ cmd_files }}"
+
+    - name: Run each AIX command from canned outputs
+      command: "{{ item }}"
+      register: cmd_result
+      failed_when: false
+      changed_when: false
+      loop: "{{ aix_commands }}"
+
+    - name: Show command results
+      debug:
+        msg: |
+          Command: {{ item.invocation.module_args._raw_params }}
+          Return code: {{ item.rc }}
+          Stdout: |
+            {{ item.stdout }}
+          Stderr: |
+            {{ item.stderr }}
+      loop: "{{ cmd_result.results }}"
