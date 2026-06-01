@@ -29,7 +29,13 @@ This lab is designed to run on RHEL-based hosts using Podman/Podman Compose or D
 - `aix-emulator/` — real shell host with AIX command shim overrides
 - `brocade-emulator/` — fake SSH server for Brocade CLI commands
 - `flashsystem-emulator/` — fake SSH server for IBM FlashSystem CLI commands
-- `tools/` — utility scripts for capture and validation
+- `tools/` — utility scripts for capture, validation, and container management
 - `docs/` — architecture and usage documentation
 - `inventory.ini` — Ansible inventory for the demo lab
 - `playbook.yml` — example playbook against all emulated devices
+
+## Utility scripts
+
+- `tools/test_aix_df_k.sh` — regression test for AIX `df -k`
+- `tools/rebuild_aix_emulator.sh` — stop/remove the AIX container, delete its image, and rebuild the emulator image
+- `tools/restart_all_containers.sh` — stop and restart all running emulator containers
