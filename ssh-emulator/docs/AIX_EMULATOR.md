@@ -30,3 +30,11 @@ Use the rebuild helper to stop/remove the running AIX container, delete the imag
 ```bash
 bash tools/rebuild_aix_emulator.sh
 ```
+
+## Restart all emulator containers
+
+Use the restart helper to stop and restart the full emulator set defined in `podman-compose.yml`:
+
+```bash
+bash tools/restart_all_containers.sh
+```

@@ -28,6 +28,14 @@ Use the rebuild helper to stop and remove the running AIX container, delete loca
 bash ssh-emulator/tools/rebuild_aix_emulator.sh
 ```
 
+## Restarting all emulator containers
+
+Use the restart helper to stop and restart all emulator containers in the lab:
+
+```bash
+bash ssh-emulator/tools/restart_all_containers.sh
+```
+
 ## Validating canned outputs
 
 Run the validator script from the repo root:
