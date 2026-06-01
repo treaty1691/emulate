@@ -43,3 +43,34 @@ Run the validator script from the repo root:
 ```bash
 python3 tools/validate_outputs.py
 ```
+
+## Cleaning up containers and images
+
+To stop and remove all emulator containers (ix1, rocade1, lash1) and remove their local images, run:
+
+Bringing down compose services (if running)...
+flash1
+brocade1
+aix1
+flash1
+brocade1
+aix1
+d45ca9e7e65fa7fa84e0954a177356d5db4f3b566e206e0a76d3d4954aabe0e3
+ssh-emulator_default
+Removing container: aix1
+Removing container: brocade1
+Removing container: flash1
+Removing images matching keywords: aix-emulator brocade-emulator flashsystem-emulator
+Cleanup complete.
+
+## Cleaning up containers and images
+
+To stop and remove all emulator containers (ix1, rocade1, lash1) and remove their local images, run:
+
+
+
+## Cleaning up containers and images
+
+To stop and remove all emulator containers (ix1, rocade1, lash1) and remove their local images, run:
+
+

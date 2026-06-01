@@ -1,7 +1,16 @@
 #!/bin/sh
-CMD="$(basename "$0")"
+# If the wrapper passes the real command name as $1, use it; otherwise use the invoked name.
+if [ "$#" -gt 0 ]; then
+    CMD="$1"
+    shift
+else
+    CMD="$(basename "$0")"
+fi
 ARGS="$*"
-KEY="${CMD} ${ARGS}"
+KEY="${CMD}"
+if [ -n "$ARGS" ]; then
+    KEY="${KEY} ${ARGS}"
+fi
 SAFE_KEY=$(echo "$KEY" | sed 's/[^A-Za-z0-9._-]/_/g')
 FILE="/opt/mock/aix/data/${SAFE_KEY}.txt"
 
