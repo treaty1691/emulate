@@ -1,2 +1,2 @@
-#!/bin/bash
+﻿#!/bin/bash
 exec /opt/mock/aix/bin/_shim_template "$@"
