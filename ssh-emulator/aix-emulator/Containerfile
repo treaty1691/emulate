@@ -12,7 +12,7 @@ COPY sshd_config /etc/ssh/sshd_config
 COPY profile.d/mock-aix.sh /etc/profile.d/mock-aix.sh
 COPY bin/ /opt/mock/aix/bin/
 COPY data/ /opt/mock/aix/data/
-RUN find /opt/mock/aix/bin -type f -exec sed -i 's/\r$//' {} +
+RUN bash -lc 'for f in /opt/mock/aix/bin/*; do sed -i "s/\r$//" "$f"; done'
 
 RUN chmod +x /opt/mock/aix/bin/_shim_template && chmod +x /opt/mock/aix/bin/lslpp /opt/mock/aix/bin/oslevel /opt/mock/aix/bin/lsdev /opt/mock/aix/bin/errpt /opt/mock/aix/bin/df /opt/mock/aix/bin/uname
 
