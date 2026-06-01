@@ -22,6 +22,7 @@ This lab is designed to run on RHEL-based hosts using Podman/Podman Compose or D
    ```
 
 3. Add canned output files for new commands under the appropriate `data/` or `commands/` directory.
+4. Use the provided regression test and rebuild helper scripts in `tools/` as needed.
 
 ## Structure
 
