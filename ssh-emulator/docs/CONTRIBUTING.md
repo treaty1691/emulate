@@ -62,3 +62,15 @@ Removing container: brocade1
 Removing container: flash1
 Removing images matching keywords: aix-emulator brocade-emulator flashsystem-emulator
 Cleanup complete.
+
+## Cleaning up containers and images
+
+To stop and remove all emulator containers (ix1, rocade1, lash1) and remove their local images, run:
+
+
+
+## Cleaning up containers and images
+
+To stop and remove all emulator containers (ix1, rocade1, lash1) and remove their local images, run:
+
+

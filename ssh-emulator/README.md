@@ -44,3 +44,11 @@ This lab is designed to run on RHEL-based hosts using Podman/Podman Compose or D
 
 - 
 - 	ools/cleanup_all_emulators.sh — stop and remove emulator containers and their images
+
+## Cleanup helper
+
+- 	ools/cleanup_all_emulators.sh — stop and remove emulator containers and their images
+
+## Cleanup helper
+
+- 	ools/cleanup_all_emulators.sh — stop and remove emulator containers and their images

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /opt/mock/aix/bin/_shim_template "$@"
+exec /opt/mock/aix/bin/_shim_template "$(basename "$0")" "$@"
